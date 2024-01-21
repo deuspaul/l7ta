@@ -4,10 +4,22 @@ on:
   push:
 
 jobs:
+  download-artifact:
+    name: job to download the artifact
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: my-artifact
+    - name: Display structure of downloaded files
+      run: ls -R
   upload-artifact:
     name: job to upload an artifact
     runs-on: ubuntu-latest
     steps:
-      - run: docker info > artifact
-      - run: ls
-      - run: cat artifact
+      - run: docker info > myArtifact.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: myArtifact.txt
+ 
