@@ -8,6 +8,6 @@ jobs:
     name: job to upload an artifact
     runs-on: ubuntu-latest
     steps:
-      - run docker info > artifact
-      - ls
-      - cat artifact
+      - run: docker info > artifact
+      - run: ls
+      - run: cat artifact
