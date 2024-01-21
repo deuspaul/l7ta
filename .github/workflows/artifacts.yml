@@ -1,0 +1,13 @@
+name: artifacts
+
+on:
+  push:
+
+jobs:
+  upload-artifact:
+    name: job to upload an artifact
+    runs-on: ubuntu-latest
+    steps:
+      - run docker info > artifact
+      - ls
+      - cat artifact
