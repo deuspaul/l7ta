@@ -5,6 +5,7 @@ on:
 
 jobs:
   download-artifact:
+    needs: upload-artifact
     name: job to download the artifact
     runs-on: ubuntu-latest
     steps:
